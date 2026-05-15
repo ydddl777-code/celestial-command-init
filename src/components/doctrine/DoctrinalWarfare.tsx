@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { Send, Trash2, Volume2, VolumeX, Swords, AlertTriangle, Download, FileAudio, Save, Maximize2, Minimize2 } from 'lucide-react';
+import { Send, Trash2, Volume2, VolumeX, Swords, AlertTriangle, Download, FileAudio, Save, Maximize2, Minimize2, Mic } from 'lucide-react';
 import { useDoctrinalChat } from '@/hooks/useDoctrinalChat';
 import { ChatMessage } from './ChatMessage';
 import { VoiceInput } from './VoiceInput';
+import { EmpathicVoiceMode } from './EmpathicVoiceMode';
 import { Textarea } from '@/components/ui/textarea';
 import { Switch } from '@/components/ui/switch';
 import { cn } from '@/lib/utils';
@@ -17,6 +18,7 @@ export const DoctrinalWarfare = ({ defaultVoiceId }: DoctrinalWarfareProps) => {
   const [inputText, setInputText] = useState('');
   const [voiceEnabled, setVoiceEnabled] = useState(true);
   const [isFullScreen, setIsFullScreen] = useState(false);
+  const [voiceModeOpen, setVoiceModeOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const {
@@ -199,6 +201,19 @@ export const DoctrinalWarfare = ({ defaultVoiceId }: DoctrinalWarfareProps) => {
           >
             {isFullScreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
           </button>
+          <button
+            onClick={() => setVoiceModeOpen(true)}
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded border font-terminal text-[10px] uppercase tracking-widest transition-all"
+            style={{
+              borderColor: 'hsl(0 70% 45% / 0.6)',
+              background: 'hsl(0 70% 40% / 0.15)',
+              color: 'hsl(0 70% 65%)',
+            }}
+            title="Enter empathic voice mode"
+          >
+            <Mic className="w-3 h-3" />
+            Voice Mode
+          </button>
         </div>
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
@@ -361,6 +376,8 @@ export const DoctrinalWarfare = ({ defaultVoiceId }: DoctrinalWarfareProps) => {
           </button>
         </div>
       )}
+
+      <EmpathicVoiceMode open={voiceModeOpen} onClose={() => setVoiceModeOpen(false)} />
     </div>
   );
 
