@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { Send, Trash2, Volume2, VolumeX, Swords, AlertTriangle, Download, FileAudio, Save, Maximize2, Minimize2 } from 'lucide-react';
+import { Send, Trash2, Volume2, VolumeX, Swords, AlertTriangle, Download, FileAudio, Save, Maximize2, Minimize2, Mic } from 'lucide-react';
 import { useDoctrinalChat } from '@/hooks/useDoctrinalChat';
 import { ChatMessage } from './ChatMessage';
 import { VoiceInput } from './VoiceInput';
+import { EmpathicVoiceMode } from './EmpathicVoiceMode';
 import { Textarea } from '@/components/ui/textarea';
 import { Switch } from '@/components/ui/switch';
 import { cn } from '@/lib/utils';
