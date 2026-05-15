@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import { ArrowLeft } from "lucide-react";
 import { BrandHeader } from "./BrandHeader";
 
-import gadMilitary1 from "@/assets/gad-military-1.png";
-import gadMilitary2 from "@/assets/gad-military-2.png";
+import gadArmorCity from "@/assets/gad/gad-armor-city.png";
+import gadArmorFull from "@/assets/gad/gad-armor-full.png";
+import gadSuitManhattan from "@/assets/gad/gad-suit-manhattan.jpg";
+import gadKneelingPrayer from "@/assets/gad/gad-kneeling-prayer.png";
+import gadSpearWarrior from "@/assets/gad/gad-spear-warrior.jpg";
 
 // Villain images
 import villainNimrod from "@/assets/villains/nimrod.png";
@@ -19,7 +22,7 @@ import tribeBenjamin from "@/assets/tribes/benjamin.jpeg";
 import tribeJudah from "@/assets/tribes/judah.jpeg";
 import tribeLevi from "@/assets/tribes/levi.jpeg";
 
-const gadPoses = [gadMilitary1, gadMilitary2];
+const gadPoses = [gadSpearWarrior, gadArmorFull, gadArmorCity, gadKneelingPrayer, gadSuitManhattan];
 
 const opponents = [
   { name: "NIMROD", img: villainNimrod },
@@ -51,7 +54,7 @@ export const ThunderdomeEntry = ({ onEnter, onExit, gadImage }: ThunderdomeEntry
   useEffect(() => {
     const interval = setInterval(() => {
       setGadPoseIndex((prev) => (prev + 1) % gadPoses.length);
-    }, 20000);
+    }, 8000);
     return () => clearInterval(interval);
   }, []);
 
