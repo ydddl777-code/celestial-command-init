@@ -7,6 +7,7 @@ import gadArmorFull from "@/assets/gad/gad-armor-full.png";
 import gadSuitManhattan from "@/assets/gad/gad-suit-manhattan.jpg";
 import gadKneelingPrayer from "@/assets/gad/gad-kneeling-prayer.png";
 import gadSpearWarrior from "@/assets/gad/gad-spear-warrior.jpg";
+import gadHeroStance from "@/assets/gad/gad-hero-stance.png";
 
 // Villain images
 import villainNimrod from "@/assets/villains/nimrod.png";
@@ -22,7 +23,7 @@ import tribeBenjamin from "@/assets/tribes/benjamin.jpeg";
 import tribeJudah from "@/assets/tribes/judah.jpeg";
 import tribeLevi from "@/assets/tribes/levi.jpeg";
 
-const gadPoses = [gadSpearWarrior, gadArmorFull, gadArmorCity, gadKneelingPrayer, gadSuitManhattan];
+const gadPoses = [gadHeroStance, gadSpearWarrior, gadArmorFull, gadArmorCity, gadKneelingPrayer, gadSuitManhattan];
 
 const opponents = [
   { name: "NIMROD", img: villainNimrod },
