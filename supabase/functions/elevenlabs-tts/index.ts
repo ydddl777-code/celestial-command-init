@@ -45,7 +45,7 @@ Deno.serve(async (req) => {
 
     console.log('Generating TTS for:', text.substring(0, 50) + '...');
 
-    const response = await fetch(
+    let response = await fetch(
       `https://api.elevenlabs.io/v1/text-to-speech/${selectedVoiceId}?output_format=mp3_44100_128`,
       {
         method: 'POST',
@@ -60,6 +60,26 @@ Deno.serve(async (req) => {
         }),
       }
     );
+
+    // If the requested voice doesn't exist in this account, retry with the fallback
+    if (response.status === 404 && selectedVoiceId !== FALLBACK_VOICE_ID) {
+      console.warn(`Voice ${selectedVoiceId} not found, retrying with fallback ${FALLBACK_VOICE_ID}`);
+      response = await fetch(
+        `https://api.elevenlabs.io/v1/text-to-speech/${FALLBACK_VOICE_ID}?output_format=mp3_44100_128`,
+        {
+          method: 'POST',
+          headers: {
+            'xi-api-key': ELEVENLABS_API_KEY,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            text,
+            model_id: 'eleven_multilingual_v2',
+            voice_settings: mergedSettings,
+          }),
+        }
+      );
+    }
 
     if (!response.ok) {
       const errorText = await response.text();
