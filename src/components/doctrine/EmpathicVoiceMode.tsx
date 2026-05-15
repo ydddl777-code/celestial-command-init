@@ -25,7 +25,10 @@ const VoiceConversation = ({
   const handleStart = async () => {
     setConnecting(true);
     try {
-      await connect({ auth: { type: 'accessToken', value: accessToken } });
+      await connect({
+        auth: { type: 'accessToken', value: accessToken },
+        voiceId: '778b7b19-b781-44df-85a5-8a39d6595fb5',
+      } as any);
     } catch (err) {
       console.error('Hume connect failed', err);
     } finally {
