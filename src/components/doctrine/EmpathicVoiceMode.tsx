@@ -12,14 +12,20 @@ interface EmpathicVoiceModeProps {
 /* -------------------------------------------------------------- */
 /*  Inner conversation surface (rendered inside <VoiceProvider/>) */
 /* -------------------------------------------------------------- */
-const VoiceConversation = ({ onClose }: { onClose: () => void }) => {
+const VoiceConversation = ({
+  accessToken,
+  onClose,
+}: {
+  accessToken: string;
+  onClose: () => void;
+}) => {
   const { connect, disconnect, status, messages, isMuted, mute, unmute, micFft } = useVoice();
   const [connecting, setConnecting] = useState(false);
 
   const handleStart = async () => {
     setConnecting(true);
     try {
-      await connect();
+      await connect({ auth: { type: 'accessToken', value: accessToken } });
     } catch (err) {
       console.error('Hume connect failed', err);
     } finally {
