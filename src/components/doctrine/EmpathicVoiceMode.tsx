@@ -278,8 +278,8 @@ export const EmpathicVoiceMode = ({ open, onClose }: EmpathicVoiceModeProps) => 
       )}
 
       {accessToken && (
-        <VoiceProvider auth={{ type: 'accessToken', value: accessToken }}>
-          <VoiceConversation onClose={onClose} />
+        <VoiceProvider>
+          <VoiceConversation accessToken={accessToken} onClose={onClose} />
         </VoiceProvider>
       )}
     </div>
