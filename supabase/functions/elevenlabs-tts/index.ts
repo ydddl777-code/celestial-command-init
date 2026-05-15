@@ -27,8 +27,10 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Prophet Gad cloned voice - commanding, acerbic tone
-    const selectedVoiceId = voiceId || 'SpjjBReaN4HH7Rt1Zc4C';
+    // Prophet Gad voice — falls back to a public deep male voice (Daniel)
+    // if the cloned voice isn't available in this ElevenLabs account.
+    const FALLBACK_VOICE_ID = 'onwK4e9ZLuTAKqWW03F9'; // Daniel
+    const selectedVoiceId = voiceId || FALLBACK_VOICE_ID;
 
     // Default voice settings, can be overridden per request
     const defaultSettings = {
