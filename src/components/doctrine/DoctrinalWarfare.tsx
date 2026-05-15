@@ -201,6 +201,19 @@ export const DoctrinalWarfare = ({ defaultVoiceId }: DoctrinalWarfareProps) => {
           >
             {isFullScreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
           </button>
+          <button
+            onClick={() => setVoiceModeOpen(true)}
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded border font-terminal text-[10px] uppercase tracking-widest transition-all"
+            style={{
+              borderColor: 'hsl(0 70% 45% / 0.6)',
+              background: 'hsl(0 70% 40% / 0.15)',
+              color: 'hsl(0 70% 65%)',
+            }}
+            title="Enter empathic voice mode"
+          >
+            <Mic className="w-3 h-3" />
+            Voice Mode
+          </button>
         </div>
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
