@@ -376,6 +376,8 @@ export const DoctrinalWarfare = ({ defaultVoiceId }: DoctrinalWarfareProps) => {
           </button>
         </div>
       )}
+
+      <EmpathicVoiceMode open={voiceModeOpen} onClose={() => setVoiceModeOpen(false)} />
     </div>
   );
 
