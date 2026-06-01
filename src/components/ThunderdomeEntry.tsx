@@ -63,7 +63,9 @@ export const ThunderdomeEntry = ({ onEnter, onExit, gadImage }: ThunderdomeEntry
 
   return (
     <div className="fixed inset-0 bg-black overflow-hidden">
+      <h1 className="sr-only">The Threshing Floor — Doctrinal Warfare Arena</h1>
       <BrandHeader />
+
 
       {/* Arena background */}
       <div
