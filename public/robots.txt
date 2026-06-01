@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://celestial-command-init.lovable.app/sitemap.xml

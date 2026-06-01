@@ -1,0 +1,9 @@
+# The Threshing Floor
+
+> A gamified spiritual warfare and Bible doctrinal debate experience for gamers, youth, and remnant seekers. Published by Remnant Seed LLC.
+
+The Threshing Floor is an immersive tactical interface that stages doctrinal warfare against historic spiritual adversaries. It features Prophet Gad as a modern-day Elijah figure, a music vault (Prophet Gad Music / Thread Bare Music), and a storefront for ebooks and renditions.
+
+## Pages
+
+- [Home](/): Landing experience, Threshing Floor entry, doctrinal warfare chat, and storefront.
