@@ -26,8 +26,7 @@ const App = () => (
           </Routes>
           <PersistentPlayerBar />
         </MusicPlayerProvider>
-      </Toaster>
-    </BrowserRouter>
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
