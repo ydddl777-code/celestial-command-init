@@ -1,6 +1,4 @@
-import { ArrowLeft } from "lucide-react";
 import { NavArrows } from "../NavArrows";
-import { EbookGrid } from "./EbookGrid";
 import { ExtendedPlayList } from "./ExtendedPlayList";
 import lionLogo from "@/assets/lion-logo.png";
 import breastplateLogo from "@/assets/breastplate-logo.png";
@@ -39,22 +37,15 @@ export const Storefront = ({ onBack }: StorefrontProps) => {
               className="font-terminal text-[9px] tracking-widest uppercase"
               style={{ color: "hsl(45 60% 50% / 0.6)" }}
             >
-              Thread Bare Music — Remnant Seed LLC
+              Thread Bear Music — Remnant Seed LLC
             </p>
           </div>
         </div>
         <img src={breastplateLogo} alt="Breastplate" className="w-10 h-10 rounded-full" />
       </div>
 
-      {/* Content */}
+      {/* Content — music only. (E-books moved to the .com store.) */}
       <div className="max-w-6xl mx-auto px-4 md:px-8 pb-20">
-        <EbookGrid />
-
-        <div
-          className="border-t my-4"
-          style={{ borderColor: "hsl(0 50% 35% / 0.2)" }}
-        />
-
         <ExtendedPlayList />
       </div>
 
