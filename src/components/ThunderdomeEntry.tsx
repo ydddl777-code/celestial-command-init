@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowLeft } from "lucide-react";
+import { NavArrows } from "./NavArrows";
 import { BrandHeader } from "./BrandHeader";
 
 import gadArmorCity from "@/assets/gad/gad-armor-city.png";
@@ -302,19 +302,8 @@ export const ThunderdomeEntry = ({ onEnter, onExit, gadImage }: ThunderdomeEntry
         </div>
       </div>
 
-      {/* Nav arrows — same plane, centered at bottom */}
-      <div className="fixed bottom-6 left-[50%] -translate-x-[calc(50%+120px)] z-50">
-        <button onClick={onExit} className="p-2 rounded-full bg-black/50 backdrop-blur-sm border transition-all duration-300 hover:bg-black/70 opacity-60 hover:opacity-100"
-          style={{ borderColor: "hsl(45 60% 40% / 0.3)", color: "hsl(45 80% 55%)" }}>
-          <ArrowLeft className="w-4 h-4" />
-        </button>
-      </div>
-      <div className="fixed bottom-6 left-[50%] translate-x-[calc(50%+80px)] z-50">
-        <button onClick={onEnter} className="p-2 rounded-full bg-black/50 backdrop-blur-sm border transition-all duration-300 hover:bg-black/70 opacity-60 hover:opacity-100"
-          style={{ borderColor: "hsl(45 60% 40% / 0.3)", color: "hsl(45 80% 55%)" }}>
-          <ArrowLeft className="w-4 h-4 rotate-180" />
-        </button>
-      </div>
+      {/* Page navigation — harmonized left-edge BACK; ENTER above is the forward action */}
+      <NavArrows onBack={onExit} backLabel="BACK" />
 
       <style>{`
         @keyframes smoke-drift {
