@@ -138,7 +138,7 @@ export const ChatMessage = ({
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-1">
           <span className="font-terminal text-xs text-sanctuary-gold/60 uppercase tracking-wider">
-            {isUser ? 'CHALLENGER' : 'PROPHET GAD AI'}
+            {isUser ? 'CHALLENGER' : 'PGAI'}
           </span>
           <span className="font-terminal text-xs text-sanctuary-gold/30">
             {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
