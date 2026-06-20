@@ -56,7 +56,7 @@ export const ChatMessage = ({
   const handlePrintMessage = () => {
     setShowContextMenu(false);
     const header = `═══════════════════════════════════════\n   PROPHETIC DECREE\n   Law-Keeper Assembly Protocol\n═══════════════════════════════════════\n\n`;
-    const body = `[PROPHET GAD AI] ${message.timestamp.toLocaleString()}\n\n${message.content}`;
+    const body = `[PGAI] ${message.timestamp.toLocaleString()}\n\n${message.content}`;
     const footer = `\n\n═══════════════════════════════════════\n   SEALED BY THE 12-GEMSTONE BREASTPLATE\n═══════════════════════════════════════`;
     
     const printWindow = window.open('', '_blank');

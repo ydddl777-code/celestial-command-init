@@ -63,7 +63,7 @@ export const DoctrinalWarfare = ({ defaultVoiceId }: DoctrinalWarfareProps) => {
   const handleDownloadPDF = () => {
     if (messages.length === 0) return;
     const transcript = messages.map(m => 
-      `[${m.role === 'user' ? 'CHALLENGER' : 'PROPHET GAD AI'}] ${m.timestamp.toLocaleString()}\n${m.content}\n`
+      `[${m.role === 'user' ? 'CHALLENGER' : 'PGAI'}] ${m.timestamp.toLocaleString()}\n${m.content}\n`
     ).join('\n---\n\n');
     
     const header = `═══════════════════════════════════════\n   PROPHETIC DECREE — RECORD OF ENGAGEMENT\n   The Thunderdome\n═══════════════════════════════════════\n\n`;
